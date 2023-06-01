@@ -27,6 +27,9 @@ passport.deserializeUser((id, done) => {
   });
 });
 
+const authRoutes = require('./routes/authRoutes');
+app.use('/', authRoutes);
+
 app.listen(process.env.PORT, (err) => {
     if (err) console.log (err)
     console.log("Server is running on port ", process.env.PORT||3007);
